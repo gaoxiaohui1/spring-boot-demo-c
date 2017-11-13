@@ -8,15 +8,53 @@ import java.util.List;
 
 @Service
 public class UserService {
-    public User getUser() {
-        return new User("0","f",31);
+    /**
+     * 获取单个User
+     * @param id
+     * @return
+     */
+    public User getSingleUser(Integer id) {
+        System.out.println(id);
+        return new User();
     }
-    public List<User> getUsers() {
-        List<User> users=new ArrayList<User>();
-        users.add(new User("1","f",31));
-        users.add(new User("2","f",31));
-        users.add(new User("3","f",31));
-        users.add(new User("4","f",31));
-        return users;
+
+    /**
+     * 获取多个Users
+     * @param list
+     * @return
+     */
+    public List<User> getUsers(ArrayList<String> list) {
+        System.out.println(list);
+        return new ArrayList<User>();
+    }
+
+    /**
+     * 新增User
+     * @param user
+     * @return
+     */
+    public User addUser(User user) {
+        System.out.println(user);
+        return new User();
+    }
+
+    /**
+     * 修改User
+     * @param user
+     * @return
+     */
+    public User updateUser(User user) {
+        System.out.println(user);
+        return new User();
+    }
+
+    /**
+     * 删除User
+     * @param id
+     * @return
+     */
+    public User deleteUser(Integer id) {
+        System.out.println(id);
+        return new User();
     }
 }

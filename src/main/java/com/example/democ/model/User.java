@@ -1,32 +1,65 @@
 package com.example.democ.model;
 
 public class User {
+    private Integer id;
+
     private String name;
+
     private String gender;
+
     private Integer age;
-    public void setName(String name) {
-        this.name=name;
+
+    private Double height;
+
+    private Integer dataStatus;
+
+    public Integer getId() {
+        return id;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getName() {
-        return this.name;
+        return name;
     }
-    public void setGender(String gender) {
-        this.gender=gender;
+
+    public void setName(String name) {
+        this.name = name;
     }
+
     public String getGender() {
-        return this.gender;
+        return gender;
     }
-    public void setAge(Integer age) {
-        this.age=age;
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
+
     public Integer getAge() {
-        return this.age;
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Double getHeight() {
+        return height;
+    }
+
+    public void setHeight(Double height) {
+        this.height = height;
+    }
+
+    public Integer getDataStatus() {
+        return dataStatus;
+    }
+
+    public void setDataStatus(Integer dataStatus) {
+        this.dataStatus = dataStatus;
     }
     public User() {
-    }
-    public User(String name,String gender,Integer age) {
-        this.name=name;
-        this.gender=gender;
-        this.age=age;
     }
 }

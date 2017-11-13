@@ -13,12 +13,12 @@
         <#include "head.ftl">
     </div>
 
-    <div style="border: red;height: 300px;width: 1000px;background-color:beige;">
-        <div style="width: 200px;height: 200px;float: left;background-color:greenyellow;">
+    <div style="border: red;height: auto;width: 1000px;background-color:beige;">
+        <div style="width: 200px;float: left;background-color:greenyellow;">
             this is menu
             <#include "menu.ftl">
         </div>
-        <div style="width: 800px;height: 250px;float: right;background-color:gold;">
+        <div style="width: 800px;float: right;background-color:gold;">
             <div class="page-content">
                 this is content
                 <#nested >

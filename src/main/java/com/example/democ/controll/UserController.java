@@ -1,12 +1,14 @@
 package com.example.democ.controll;
 
 import com.example.democ.model.Menu;
+import com.example.democ.model.User;
 import com.example.democ.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,5 +61,30 @@ public class UserController {
         }
         model.put("menus", menus);
         return "realMenu";
+    }
+
+    @GetMapping(value = "listData")
+    public String listData(ModelMap model, @RequestParam(value = "key", required = false) String key,
+                           @RequestParam(value = "value", required = false) String value,
+                           @RequestParam(value = "page", required = false) Integer page) {
+        System.out.println(key);
+        System.out.println(value);
+        System.out.println(page);
+        if (page < 1) {
+            page = 1;
+        }
+        List<User> users = new ArrayList<User>();
+        for (int i = 0; i < 6; i++) {
+            User user = new User();
+            user.setId(i);
+            user.setName("张三_" + page + "_" + i);
+            user.setGender("m");
+            user.setAge(i + 12);
+            user.setHeight(i + 170.5);
+            users.add(user);
+        }
+        model.put("users", users);
+        model.put("totalCount", 61);
+        return "ajaxListData";
     }
 }

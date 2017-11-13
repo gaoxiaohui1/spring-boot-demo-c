@@ -6,7 +6,7 @@
         <th style="width: 50px">性别</th>
         <th style="width: 50px">年龄</th>
         <th style="width: 50px">身高</th>
-        <th style="width: 50px">操作</th>
+        <th style="width: 150px">操作</th>
         </thead>
         <tbody>
         <#list users as user>
@@ -22,6 +22,8 @@
         </tr>
         </#list>
         </tbody>
+        <tfoot id="tfoot">
+        </tfoot>
     </table>
     <input type="hidden" id="totalCount" value="${totalCount}"/>
 </div>

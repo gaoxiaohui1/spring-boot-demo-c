@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div style="border: red;height: 100px;width: 1000px;background-color: aqua;">
+    <div style="border: red;height: 100px;width: 1000px;background-color: aqua;float: left;">
         this is footer
         <#include "foot.ftl">
     </div>

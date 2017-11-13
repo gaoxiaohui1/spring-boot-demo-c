@@ -17,10 +17,15 @@ ${msg}
                 <label>搜索值</label>
                 <input type="text" name="value"/>
             </div>
-            <div style="float: right">
-                <button id="searchBtn">搜索</button>
-            </div>
         </form>
+        <div style="float: right">
+            <button id="addBtn">新增</button>
+        </div>
+        <div style="float: right">
+            <button id="searchBtn">搜索</button>
+        </div>
+
+
     </div>
     <hr/>
     <div id="dataDiv">
@@ -32,7 +37,7 @@ ${msg}
 <script src="/js/list.js"></script>
 <script>
     $(function () {
-        var list = new d_c_list({btn: $("#searchBtn"),frm: $("#frm"), div: $("#dataDiv")});
+        var list = new d_c_list({add: $("#addBtn"), btn: $("#searchBtn"), frm: $("#frm"), div: $("#dataDiv")});
         list.init();
     })
 </script>

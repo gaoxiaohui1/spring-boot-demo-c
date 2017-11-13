@@ -6,9 +6,8 @@ import com.example.democ.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,24 +17,6 @@ public class UserController {
 
     @Autowired
     private UserService us;
-
-    @GetMapping(value = "/i")
-    public String index(ModelMap model) {
-        model.put("message", "this is message");
-        return "index";
-    }
-
-    @GetMapping(value = "/s")
-    public String search(ModelMap model) {
-        model.put("message", "this is message");
-        return "search";
-    }
-
-    @GetMapping(value = "/d")
-    public String data(ModelMap model) {
-        model.put("message", "this is message");
-        return "data";
-    }
 
     @GetMapping(value = "/list/{id}")
     public String list(ModelMap model, @PathVariable(value = "id") Integer id) {
@@ -86,5 +67,20 @@ public class UserController {
         model.put("users", users);
         model.put("totalCount", 61);
         return "ajaxListData";
+    }
+
+
+    @PostMapping(value = "add")
+    @ResponseBody
+    public String add(User user, BindingResult bindingResult) {
+        System.out.println(user);
+        return "成功";
+    }
+
+    @PostMapping(value = "update")
+    @ResponseBody
+    public String update(User user, BindingResult bindingResult) {
+        System.out.println(user);
+        return "成功";
     }
 }

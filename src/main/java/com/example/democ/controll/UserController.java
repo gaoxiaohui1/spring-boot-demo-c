@@ -64,14 +64,14 @@ public class UserController {
     @PostMapping(value = "add")
     @ResponseBody
     public String add(User user, BindingResult bindingResult) {
-        us.addUser(user);
+        User res = us.addUser(user);
         return "成功";
     }
 
     @PostMapping(value = "update")
     @ResponseBody
     public String update(User user, BindingResult bindingResult) {
-        us.updateUser(user);
+        User res = us.updateUser(user);
         return "成功";
     }
 }

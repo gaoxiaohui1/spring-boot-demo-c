@@ -5,12 +5,13 @@
         btn: '',// 搜索按钮
         frm: '',// 搜索form
         div: '',// data所在div
+        pageSize: 10,
     };
 
     // 获取列表
     function getData(page) {
         var data = settings.frm.serialize();
-        data += "&pageSize=10&page=" + page;
+        data += "&pageSize=" + settings.pageSize + "&page=" + page;
         $.ajax({
             url: "/listData",
             data: data,
@@ -30,7 +31,7 @@
         $("#pageDiv").createPage({
             totalCount: totalCount,
             current: page,
-            pageSize: 6,
+            pageSize: settings.pageSize,
             backFn: function (p) {
                 getData(p);
             }

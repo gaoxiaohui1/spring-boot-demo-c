@@ -37,7 +37,13 @@ ${msg}
 <script src="/js/list.js"></script>
 <script>
     $(function () {
-        var list = new d_c_list({add: $("#addBtn"), btn: $("#searchBtn"), frm: $("#frm"), div: $("#dataDiv")});
+        var list = new d_c_list({
+            add: $("#addBtn"),
+            btn: $("#searchBtn"),
+            frm: $("#frm"),
+            div: $("#dataDiv"),
+            pageSize: 10
+        });
         list.init();
     })
 </script>

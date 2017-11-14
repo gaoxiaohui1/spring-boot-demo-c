@@ -10,7 +10,7 @@
     // 获取列表
     function getData(page) {
         var data = settings.frm.serialize();
-        data += "&page=" + page;
+        data += "&pageSize=10&page=" + page;
         $.ajax({
             url: "/listData",
             data: data,
